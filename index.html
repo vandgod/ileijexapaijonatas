@@ -8,11 +8,12 @@
             margin: 0;
             padding: 0;
             font-family: 'Georgia', serif;
-            background-image: url('Oxum 4.jpg'); /* Plano de fundo - substitua pela imagem desejada */
+            background-image: url('Oxum 4.jpg'); /* Fundo inspirado em Oxum */
             background-size: cover;
             background-position: center;
             color: #fff;
             text-shadow: 1px 1px 3px #000;
+            position: relative;
         }
 
         .overlay {
@@ -35,8 +36,14 @@
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             color: #FFD700; /* Dourado */
+            margin-bottom: 10px;
+        }
+
+        h3 p {
+            font-size: 1.3em;
+            color: #ADD8E6; /* Azul claro */
         }
 
         .principal {
@@ -56,26 +63,59 @@
         li {
             font-size: 1.2em;
             margin: 10px 0;
+            color: #FFFACD; /* Amarelo claro */
         }
 
+        /* 🔶 Formulário estilo Oxum */
         form {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: left;
+            background-color: rgba(255, 255, 255, 0.12);
+            padding: 25px;
+            border: 2px solid #FFD700;
+            border-radius: 12px;
             width: 300px;
+            margin: 30px auto;
+            color: #fff;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+            text-align: left;
+        }
+
+        form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #FFF8DC;
         }
 
         form input, form textarea {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
+            margin-top: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #333;
         }
 
         form input::placeholder, form textarea::placeholder {
-            color: #333;
+            color: #666;
+        }
+
+        form button[type="submit"], .contato button {
+            background-color: #FFD700;
+            color: #000;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        form button[type="submit"]:hover, .contato button:hover {
+            background-color: #e6c200;
         }
 
         .contato {
@@ -84,32 +124,23 @@
 
         .decorativo {
             margin-top: 40px;
-            font-size: 0.9em;
+            font-size: 0.95em;
             font-style: italic;
-        }
-
-        button {
-            background-color: #25D366;
-            color: #000;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
+            color: #FDF5E6;
         }
     </style>
 </head>
 <body>
-    <!-- Sobreposição escura para destacar o conteúdo -->
+    <!-- Camada escura para destacar o conteúdo -->
     <div class="overlay"></div>
 
-    <!-- Conteúdo principal -->
+    <!-- Conteúdo central -->
     <div class="conteudo">
         <h1>YLÊ IJEXA OXUM MIWÁ - Pai Jonatas</h1>
         <h3><p>Consultas espirituais e orientação com base na sabedoria dos Orixás.</p></h3>
 
-        <div class="principal">
-            <!-- Lista de serviços -->
+        <!-- Lista de serviços -->
+        <div class="principal" align="center">
             <ul>
                 <li>🔮 Consultas espirituais</li>
                 <li>🌀 Jogo de búzios</li>
@@ -119,23 +150,25 @@
                 <li>🌿 Trabalhos afins</li>
                 <li>🌟 Abrimento de caminhos</li>
             </ul>
-
-            <!-- Formulário -->
-            <form>
-                <label for="nome">Seu nome:</label>
-                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-
-                <label for="contato">Seu contato:</label>
-                <input type="text" id="contato" name="contato" placeholder="WhatsApp ou telefone" required>
-
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua dúvida, pedido ou intenção..." required></textarea>
-            </form>
         </div>
+
+        <!-- Formulário abaixo da lista -->
+        <form action="enviar.php" method="POST">
+            <label for="nome">Seu nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+            <label for="contato">Seu contato:</label>
+            <input type="text" id="contato" name="email" placeholder="WhatsApp ou e-mail" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua dúvida, pedido ou intenção..." required></textarea>
+
+            <button type="submit">Enviar mensagem</button>
+        </form>
 
         <!-- Botão WhatsApp -->
         <div class="contato">
-            <a href="https://wa.me/555191975798?text=Olá%2C%20gostaria%20de%20uma%20consulta%20espiritual." target="_blank">
+            <a href="https://wa.me/5551989727254?text=Olá%2C%20gostaria%20de%20uma%20consulta%20espiritual." target="_blank">
                 <button>Agendar Consulta via WhatsApp</button>
             </a>
         </div>
@@ -143,8 +176,6 @@
         <!-- Área decorativa -->
         <div class="decorativo">
             <p>Axé! Que a força dos Orixás guiem seu caminho.</p>
-
-            <!-- Ícones representando os Orixás -->
             <img src="abelha.png" alt="abelha.png" width="60" style="margin: 10px;">
             <img src="abelha2.png" alt="abelha2" width="60" style="margin: 10px;">
             <img src="abelha3.png" alt="abelha3" width="60" style="margin: 10px;">

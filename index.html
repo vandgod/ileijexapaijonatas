@@ -2,13 +2,14 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>YLÊ IJEXA OXUM MIWÁ - Pai Jonatas</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: 'Georgia', serif;
-            background-image: url('Oxum_4.jpg');
+            background-image: url('Oxum 4.jpg');
             background-size: cover;
             background-position: center;
             color: #fff;
@@ -16,8 +17,27 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            flex-direction: column;
+            min-height: 100vh;
         }
+
+        .contato button {
+    background-color: #FFD700; /* Dourado */
+    color: #000;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+}
+
+.contato button:hover {
+    background-color: #e6c200;
+}
+
 
         .overlay {
             background-color: rgba(0, 0, 0, 0.6);
@@ -30,14 +50,15 @@
             position: relative;
             z-index: 1;
             padding: 50px 20px;
-            max-width: 900px;
+            max-width: 90%;
             text-align: center;
             background: rgba(0, 0, 0, 0.4);
             border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 217, 0, 0.925);
         }
 
         h1 {
-            font-size: 2.8em;
+            font-size: 2.5em;
             color: #FFD700;
         }
 
@@ -49,6 +70,7 @@
         ul {
             list-style: none;
             padding: 0;
+            text-align: center;
         }
 
         li {
@@ -57,65 +79,96 @@
             color: #FFFACD;
         }
 
-        form {
+        .formulario {
+            background-color: rgba(255, 255, 255, 0.12);
+            padding: 25px;
+            border: 2px solid #FFD700;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            margin: 30px auto;
+            color: #fff;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+            text-align: left;
+        }
+
+       
+
+        .formulario textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .formulario button {
+            background-color: #FFD700;
+            color: #000;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .formulario button:hover {
+            background-color: #e6c200;
+        }
+
+        .contato {
             margin-top: 20px;
         }
 
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-
-        button {
-            background-color: #FFD700;
-            color: black;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            cursor: pointer;
-        }
-
+        /* 🐝 Animação aleatória das abelhas */
         .abelha {
             position: absolute;
-            width: 50px;
-            animation: voar 6s infinite alternate ease-in-out;
+            width: 40px;
+            animation: voar 20s infinite alternate ease-in-out;
         }
 
         @keyframes voar {
             0% { transform: translateX(0) translateY(0); }
-            50% { transform: translateX(150px) translateY(30px); }
-            100% { transform: translateX(-150px) translateY(-30px); }
+            25% { transform: translateX(-100px) translateY(50px); }
+            50% { transform: translateX(100px) translateY(-50px); }
+            75% { transform: translateX(-150px) translateY(70px); }
+            100% { transform: translateX(150px) translateY(-70px); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .conteudo { padding: 30px 15px; }
+            .formulario { max-width: 90%; }
+            .abelha { width: 30px; }
         }
     </style>
 </head>
 <body>
-
-    <div class="overlay"></div>
-
+    
     <div class="conteudo">
         <h1>YLÊ IJEXA OXUM MIWÁ - Pai Jonatas</h1>
         <h3><p>Consultas espirituais e orientação com base na sabedoria dos Orixás.</p></h3>
 
         <ul>
-            <li>🔮 Consultas espirituais</li>
+           <h3> <li>🔮 Consultas espirituais</li>
             <li>🌀 Jogo de búzios</li>
             <li>🃏 Leitura de cartas</li>
             <li>🔥 Consultas com Exu</li>
             <li>💧 Limpezas espirituais</li>
             <li>🌿 Trabalhos afins</li>
-            <li>🌟 Abrimento de caminhos</li>
+            <li>🌟 Abrimento de caminhos</li></h3>
         </ul>
 
-        <form action="enviar.php" method="POST">
-            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua dúvida, pedido ou intenção..." required></textarea>
-            <button type="submit">Enviar mensagem</button>
-        </form>
+        <form id="formMensagem" class="formulario">
+    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua dúvida, pedido ou intenção..." required></textarea>
+    <button type="button" onclick="enviarWhatsApp()">Enviar pelo WhatsApp</button>
+</form>
+
 
         <div class="contato">
             <a href="https://wa.me/5551989727254?text=Olá%2C%20gostaria%20de%20uma%20consulta%20espiritual." target="_blank">
@@ -123,10 +176,20 @@
             </a>
         </div>
 
-        <div class="abelha" style="top: 10%; left: 10%;"><img src="abelha.png" alt="Abelha"></div>
-        <div class="abelha" style="top: 30%; left: 80%;"><img src="abelha2.png" alt="Abelha"></div>
-        <div class="abelha" style="top: 60%; left: 50%;"><img src="abelha3.png" alt="Abelha"></div>
+        <!-- 🌿🐝 Abelhas voando aleatoriamente -->
+        <div class="abelha" style="top: 8%; left: 12%;"><img src="abelha.png" alt="Abelha"></div>
+        <div class="abelha" style="top: 50%; left: 70%;"><img src="abelha.png" alt="Abelha"></div>
+        <div class="abelha" style="top: 85%; left: 40%;"><img src="abelha.png" alt="Abelha"></div>
     </div>
+
+    <script>
+        function enviarWhatsApp() {
+            let mensagem = document.getElementById("mensagem").value;
+            let numero = "5551989727254";
+            let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+    </script>
 
 </body>
 </html>

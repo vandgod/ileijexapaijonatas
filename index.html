@@ -8,116 +8,125 @@
             margin: 0;
             padding: 0;
             font-family: 'Georgia', serif;
-            background-image: url('Oxum 4.jpg'); /* Fundo inspirado em Oxum */
+            background-image: url('Oxum_4.jpg');
             background-size: cover;
             background-position: center;
             color: #fff;
             text-shadow: 1px 1px 3px #000;
-            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .overlay {
             background-color: rgba(0, 0, 0, 0.6);
+            position: fixed;
             width: 100%;
             height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 0;
         }
 
         .conteudo {
             position: relative;
             z-index: 1;
             padding: 50px 20px;
-            max-width: 1000px;
-            margin: auto;
+            max-width: 900px;
             text-align: center;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
         }
 
         h1 {
             font-size: 2.8em;
-            color: #FFD700; /* Dourado */
-            margin-bottom: 10px;
+            color: #FFD700;
         }
 
         h3 p {
             font-size: 1.3em;
-            color: #ADD8E6; /* Azul claro */
-        }
-
-        .principal {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
+            color: #ADD8E6;
         }
 
         ul {
             list-style: none;
             padding: 0;
-            text-align: left;
         }
 
         li {
             font-size: 1.2em;
             margin: 10px 0;
-            color: #FFFACD; /* Amarelo claro */
+            color: #FFFACD;
         }
 
-       
-       
+        form {
+            margin-top: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #FFD700;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .abelha {
+            position: absolute;
+            width: 50px;
+            animation: voar 6s infinite alternate ease-in-out;
+        }
+
+        @keyframes voar {
+            0% { transform: translateX(0) translateY(0); }
+            50% { transform: translateX(150px) translateY(30px); }
+            100% { transform: translateX(-150px) translateY(-30px); }
+        }
     </style>
 </head>
 <body>
-    <!-- Camada escura para destacar o conteúdo -->
+
     <div class="overlay"></div>
 
-    <!-- Conteúdo central -->
     <div class="conteudo">
         <h1>YLÊ IJEXA OXUM MIWÁ - Pai Jonatas</h1>
         <h3><p>Consultas espirituais e orientação com base na sabedoria dos Orixás.</p></h3>
 
-        <!-- Lista de serviços -->
-        <div class="principal" align="center">
-            <ul>
-                <li>🔮 Consultas espirituais</li>
-                <li>🌀 Jogo de búzios</li>
-                <li>🃏 Leitura de cartas</li>
-                <li>🔥 Consultas com Exu</li>
-                <li>💧 Limpezas espirituais</li>
-                <li>🌿 Trabalhos afins</li>
-                <li>🌟 Abrimento de caminhos</li>
-            </ul>
-        </div>
+        <ul>
+            <li>🔮 Consultas espirituais</li>
+            <li>🌀 Jogo de búzios</li>
+            <li>🃏 Leitura de cartas</li>
+            <li>🔥 Consultas com Exu</li>
+            <li>💧 Limpezas espirituais</li>
+            <li>🌿 Trabalhos afins</li>
+            <li>🌟 Abrimento de caminhos</li>
+        </ul>
 
-        <!-- Formulário abaixo da lista -->
         <form action="enviar.php" method="POST">
-    <label for="nome">Seu nome:</label>
-    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua dúvida, pedido ou intenção..." required></textarea>
+            <button type="submit">Enviar mensagem</button>
+        </form>
 
-    
-    <label for="mensagem">Mensagem:</label>
-    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua dúvida, pedido ou intenção..." required></textarea>
-
-    </form>
-
-
-        <!-- Botão WhatsApp -->
         <div class="contato">
             <a href="https://wa.me/5551989727254?text=Olá%2C%20gostaria%20de%20uma%20consulta%20espiritual." target="_blank">
                 <button>Agendar Consulta via WhatsApp</button>
             </a>
         </div>
 
-        <!-- Área decorativa -->
-        <div class="decorativo">
-            <p>Axé! Que a força dos Orixás guiem seu caminho.</p>
-            <img src="abelha.png" alt="abelha.png" width="60" style="margin: 10px;">
-            <img src="abelha2.png" alt="abelha2" width="60" style="margin: 10px;">
-            <img src="abelha3.png" alt="abelha3" width="60" style="margin: 10px;">
-        </div>
+        <div class="abelha" style="top: 10%; left: 10%;"><img src="abelha.png" alt="Abelha"></div>
+        <div class="abelha" style="top: 30%; left: 80%;"><img src="abelha2.png" alt="Abelha"></div>
+        <div class="abelha" style="top: 60%; left: 50%;"><img src="abelha3.png" alt="Abelha"></div>
     </div>
+
 </body>
 </html>

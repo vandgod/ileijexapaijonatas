@@ -9,7 +9,9 @@
             margin: 0;
             padding: 0;
             font-family: 'Georgia', serif;
-            background: url('Oxum 4.jpg') no-repeat center center/cover;
+            background-image: url('Oxum 4.jpg');
+            background-size: cover;
+            background-position: center;
             color: #fff;
             text-shadow: 1px 1px 3px #000;
             display: flex;
@@ -18,6 +20,24 @@
             flex-direction: column;
             min-height: 100vh;
         }
+
+        .contato button {
+    background-color: #FFD700; /* Dourado */
+    color: #000;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+}
+
+.contato button:hover {
+    background-color: #e6c200;
+}
+
 
         .overlay {
             background-color: rgba(0, 0, 0, 0.6);
@@ -60,7 +80,7 @@
         }
 
         .formulario {
-            background: rgba(255, 255, 255, 0.12);
+            background-color: rgba(255, 255, 255, 0.12);
             padding: 25px;
             border: 2px solid #FFD700;
             border-radius: 12px;
@@ -72,20 +92,21 @@
             text-align: left;
         }
 
+       
+
         .formulario textarea {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
-            background: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.8);
             border: 1px solid #ccc;
             border-radius: 8px;
             font-size: 1em;
             color: #333;
         }
 
-        .formulario button,
-        .contato button {
-            background: #FFD700;
+        .formulario button {
+            background-color: #FFD700;
             color: #000;
             padding: 12px;
             border: none;
@@ -94,59 +115,78 @@
             font-weight: bold;
             cursor: pointer;
             width: 100%;
-            box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
         }
 
-        .formulario button:hover,
-        .contato button:hover {
-            background: #e6c200;
+        .formulario button:hover {
+            background-color: #e6c200;
         }
 
         .contato {
             margin-top: 20px;
         }
 
+        /* 🐝 Animação aleatória das abelhas */
+        .abelha {
+            position: absolute;
+            width: 40px;
+            animation: voar 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes voar {
+            0% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(-100px) translateY(50px); }
+            50% { transform: translateX(100px) translateY(-50px); }
+            75% { transform: translateX(-150px) translateY(70px); }
+            100% { transform: translateX(150px) translateY(-70px); }
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2em; }
             .conteudo { padding: 30px 15px; }
             .formulario { max-width: 90%; }
+            .abelha { width: 30px; }
         }
     </style>
 </head>
 <body>
-
+    <!-- 🌿🐝 Abelhas voando aleatoriamente -->
+        <div class="abelha" style="top: 8%; left: 12%;"><img src="abelha.png" alt="Abelha"></div>
+        <div class="abelha" style="top: 50%; left: 70%;"><img src="abelha.png" alt="Abelha"></div>
+        <div class="abelha" style="top: 85%; left: 40%;"><img src="abelha.png" alt="Abelha"></div>
+    
     <div class="conteudo">
         <h1>YLÊ IJEXA OXUM MIWÁ - Pai Jonatas</h1>
         <h3><p>Consultas espirituais e orientação com base na sabedoria dos Orixás.</p></h3>
 
         <ul>
-            <h3>
-                <li>🔮 Consultas espirituais</li>
-                <li>🌀 Jogo de búzios</li>
-                <li>🃏 Leitura de cartas</li>
-                <li>🔥 Consultas com Exu</li>
-                <li>💧 Limpezas espirituais</li>
-                <li>🌿 Trabalhos afins</li>
-                <li>🌟 Abrimento de caminhos</li>
-            </h3>
+           <h3> <li>🔮 Consultas espirituais</li>
+            <li>🌀 Jogo de búzios</li>
+            <li>🃏 Leitura de cartas</li>
+            <li>🔥 Consultas com Exu</li>
+            <li>💧 Limpezas espirituais</li>
+            <li>🌿 Trabalhos afins</li>
+            <li>🌟 Abrimento de caminhos</li></h3>
         </ul>
 
         <form id="formMensagem" class="formulario">
-            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua dúvida, pedido ou intenção..." required></textarea>
-            <button type="button" onclick="enviarWhatsApp()">Enviar pelo WhatsApp</button>
-        </form>
+    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua dúvida, pedido ou intenção..." required></textarea>
+    <button type="button" onclick="enviarWhatsApp()">Enviar pelo WhatsApp</button>
+</form>
+
 
         <div class="contato">
             <a href="https://wa.me/5551989727254?text=Olá%2C%20gostaria%20de%20uma%20consulta%20espiritual." target="_blank">
                 <button>Agendar Consulta via WhatsApp</button>
             </a>
         </div>
+
+        
     </div>
 
     <script>
         function enviarWhatsApp() {
             let mensagem = document.getElementById("mensagem").value;
-            let numero = "555191975798";
+            let numero = "5551989727254";
             let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
             window.open(url, '_blank');
         }

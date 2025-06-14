@@ -22,22 +22,21 @@
         }
 
         .contato button {
-    background-color: #FFD700; /* Dourado */
-    color: #000;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2em;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
-}
+            background-color: #FFD700;
+            color: #000;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+        }
 
-.contato button:hover {
-    background-color: #e6c200;
-}
-
+        .contato button:hover {
+            background-color: #e6c200;
+        }
 
         .overlay {
             background-color: rgba(0, 0, 0, 0.6);
@@ -57,6 +56,22 @@
             box-shadow: 0 0 15px rgba(255, 217, 0, 0.925);
         }
 
+        /* Adiciona abelhas ao fundo da primeira div */
+        .conteudo::before {
+            content: "";
+            background-image: url('abelha.png'); 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3; /* Ajuste para melhor integração */
+            z-index: -1;
+            background-size: 150px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
         h1 {
             font-size: 2.5em;
             color: #FFD700;
@@ -65,18 +80,6 @@
         h3 p {
             font-size: 1.3em;
             color: #ADD8E6;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        li {
-            font-size: 1.2em;
-            margin: 10px 0;
-            color: #FFFACD;
         }
 
         .formulario {
@@ -91,8 +94,6 @@
             box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
             text-align: left;
         }
-
-       
 
         .formulario textarea {
             width: 100%;
@@ -121,31 +122,6 @@
             background-color: #e6c200;
         }
 
-        .contato {
-            margin-top: 20px;
-        }
-
-        /* 🐝 Animação aleatória das abelhas */
-        .abelha {
-            position: absolute;
-            width: 40px;
-            animation: voar 20s infinite alternate ease-in-out;
-        }
-
-        @keyframes voar {
-            0% { transform: translateX(0) translateY(0); }
-            25% { transform: translateX(-100px) translateY(50px); }
-            50% { transform: translateX(100px) translateY(-50px); }
-            75% { transform: translateX(-150px) translateY(70px); }
-            100% { transform: translateX(150px) translateY(-70px); }
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2em; }
-            .conteudo { padding: 30px 15px; }
-            .formulario { max-width: 90%; }
-            .abelha { width: 30px; }
-        }
     </style>
 </head>
 <body>
@@ -155,7 +131,7 @@
         <h3><p>Consultas espirituais e orientação com base na sabedoria dos Orixás.</p></h3>
 
         <ul>
-           <h3> <li>🔮 Consultas espirituais</li>
+            <h3><li>🔮 Consultas espirituais</li>
             <li>🌀 Jogo de búzios</li>
             <li>🃏 Leitura de cartas</li>
             <li>🔥 Consultas com Exu</li>
@@ -165,20 +141,16 @@
         </ul>
 
         <form id="formMensagem" class="formulario">
-    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua dúvida, pedido ou intenção..." required></textarea>
-    <button type="button" onclick="enviarWhatsApp()">Enviar pelo WhatsApp</button>
-</form>
-
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua dúvida, pedido ou intenção..." required></textarea>
+            <button type="button" onclick="enviarWhatsApp()">Enviar pelo WhatsApp</button>
+        </form>
 
         <div class="contato">
             <a href="https://wa.me/5551989727254?text=Olá%2C%20gostaria%20de%20uma%20consulta%20espiritual." target="_blank">
                 <button>Agendar Consulta via WhatsApp</button>
             </a>
         </div>
-
-        <!-- 🌿🐝 Abelhas voando aleatoriamente -->
-        <div class="abelha" style="top: 8%; left: 12%;"><img src="abelha.png" alt="Abelha"></div>
-        </div>
+    </div>
 
     <script>
         function enviarWhatsApp() {

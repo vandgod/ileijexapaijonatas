@@ -12,6 +12,7 @@
             background-image: url('Oxum 4.jpg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             color: #fff;
             text-shadow: 1px 1px 3px #000;
             display: flex;
@@ -21,103 +22,80 @@
             min-height: 100vh;
         }
 
-        .contato button {
-    background-color: #FFD700; /* Dourado */
-    color: #000;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2em;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
-}
-
-.contato button:hover {
-    background-color: #e6c200;
-}
-
-
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.6);
-            position: fixed;
-            width: 100%;
-            height: 100%;
-        }
-
         .conteudo {
-            position: relative;
-            z-index: 1;
-            padding: 50px 20px;
-            max-width: 90%;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px 20px;
             border-radius: 15px;
             box-shadow: 0 0 15px rgba(255, 217, 0, 0.925);
+            width: 95%;
+            max-width: 800px;
+            text-align: center;
         }
 
         h1 {
             font-size: 2.5em;
             color: #FFD700;
+            margin-bottom: 15px;
         }
 
-        h3 p {
+        h3 {
             font-size: 1.3em;
             color: #ADD8E6;
+            margin-bottom: 10px;
         }
 
         ul {
             list-style: none;
             padding: 0;
-            text-align: center;
+            margin: 20px 0;
         }
 
         li {
             font-size: 1.2em;
-            margin: 10px 0;
+            margin: 8px 0;
             color: #FFFACD;
         }
 
         .formulario {
             background-color: rgba(255, 255, 255, 0.12);
-            padding: 25px;
+            padding: 20px;
             border: 2px solid #FFD700;
             border-radius: 12px;
             width: 100%;
-            max-width: 400px;
-            margin: 30px auto;
+            max-width: 500px;
+            margin: 20px auto;
             color: #fff;
             box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
-            text-align: left;
         }
-
-       
 
         .formulario textarea {
             width: 100%;
             padding: 10px;
-            margin-top: 5px;
             background-color: rgba(255, 255, 255, 0.8);
             border: 1px solid #ccc;
             border-radius: 8px;
             font-size: 1em;
             color: #333;
+            resize: none;
         }
 
-        .formulario button {
+        .formulario button,
+        .contato button {
             background-color: #FFD700;
             color: #000;
             padding: 12px;
             border: none;
             border-radius: 8px;
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+            margin-top: 10px;
         }
 
-        .formulario button:hover {
+        .formulario button:hover,
+        .contato button:hover {
             background-color: #e6c200;
         }
 
@@ -125,7 +103,12 @@
             margin-top: 20px;
         }
 
-        /* 🐝 Animação aleatória das abelhas */
+        .contato p {
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        /* Abelhas Animadas */
         .abelha {
             position: absolute;
             width: 40px;
@@ -140,50 +123,56 @@
             100% { transform: translateX(150px) translateY(-70px); }
         }
 
+        /* Responsividade */
         @media (max-width: 768px) {
             h1 { font-size: 2em; }
-            .conteudo { padding: 30px 15px; }
-            .formulario { max-width: 90%; }
+            h3 { font-size: 1.1em; }
+            li { font-size: 1em; }
+            .conteudo { padding: 25px 10px; }
+            .formulario { max-width: 95%; }
             .abelha { width: 30px; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8em; }
+            .conteudo { padding: 20px 8px; }
+            li { font-size: 0.95em; }
         }
     </style>
 </head>
+
 <body>
-    <!-- 🌿🐝 Abelhas voando aleatoriamente -->
-        <div class="abelha" style="top: 8%; left: 12%;"><img src="abelha.png" alt="Abelha"></div>
-        <div class="abelha" style="top: 50%; left: 70%;"><img src="abelha.png" alt="Abelha"></div>
-        <div class="abelha" style="top: 85%; left: 40%;"><img src="abelha.png" alt="Abelha"></div>
-    
+
+    <!-- Abelhas voando 🐝🍯 -->
+    <div class="abelha" style="top: 8%; left: 12%;"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 50%; left: 70%;"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 85%; left: 40%;"><img src="abelha.png" alt="Abelha"></div>
+
     <div class="conteudo">
         <h1>YLÊ IJEXA OXUM MIWÁ - Pai Jonatas</h1>
-        <h3><p>Consultas espirituais e orientação com base na sabedoria dos Orixás.</p></h3>
+        <h3>Consultas espirituais e orientação com base na sabedoria dos Orixás.</h3>
 
         <ul>
-           <h3> <li>🔮 Consultas espirituais</li>
+            <li>🔮 Consultas espirituais</li>
             <li>🌀 Jogo de búzios</li>
             <li>🃏 Leitura de cartas</li>
             <li>🔥 Consultas com Exu</li>
             <li>💧 Limpezas espirituais</li>
             <li>🌿 Trabalhos afins</li>
-            <li>🌟 Abrimento de caminhos</li></h3>
+            <li>🌟 Abrimento de caminhos</li>
         </ul>
 
         <form id="formMensagem" class="formulario">
-    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua dúvida, pedido ou intenção..." required></textarea>
-    <button type="button" onclick="enviarWhatsApp()">Enviar pelo WhatsApp</button>
-</form>
-
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua dúvida, pedido ou intenção..." required></textarea>
+            <button type="button" onclick="enviarWhatsApp()">Enviar pelo WhatsApp</button>
+        </form>
 
         <div class="contato">
-            <a href="https://wa.me/5551989727254?text=Olá%2C%20gostaria%20de%20uma%20consulta%20espiritual." target="_blank">
+            <a href="https://wa.me/555191975798?text=Olá%2C%20gostaria%20de%20uma%20consulta%20espiritual." target="_blank">
                 <button>Agendar Consulta via WhatsApp</button>
             </a>
-            <p><h3>"O cuidado espiritual é um ato de amor e respeito à sua própria história. Estamos aqui para te ajudar a trilhar seu caminho com força, fé e equilíbrio."
-
-</h3></p>
+            <p>"O cuidado espiritual é um ato de amor e respeito à sua própria história. Estamos aqui para te ajudar a trilhar seu caminho com força, fé e equilíbrio."</p>
         </div>
-
-        
     </div>
 
     <script>
@@ -194,7 +183,6 @@
             window.open(url, '_blank');
         }
     </script>
-    
 
 </body>
 </html>

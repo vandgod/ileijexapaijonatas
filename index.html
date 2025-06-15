@@ -60,35 +60,31 @@
         h3 {
             font-size: 1.3em;
             color: #ADD8E6;
-            text-align: center;
-            margin-bottom: 30px;
             line-height: 1.4;
+            margin: 0;
         }
 
-        ul {
-            list-style: none;
+        .lista-horizontal {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
-            margin: 25px 0;
+            margin: 30px 0;
         }
 
-        li {
+        .item-lista {
             background: rgba(255, 215, 0, 0.2);
             padding: 12px 20px;
             border-radius: 10px;
-            font-size: 1em;
             color: #FFFACD;
             box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
             border: 1px solid rgba(255, 215, 0, 0.3);
             transition: transform 0.3s;
             text-align: center;
-            flex: 1 1 160px;
-            max-width: 200px;
+            flex: 0 0 auto;
         }
 
-        li:hover {
+        .item-lista:hover {
             transform: scale(1.03);
             background: rgba(255, 215, 0, 0.25);
         }
@@ -206,10 +202,12 @@
             h2 { font-size: 1.4em; }
             h3 { font-size: 1.1em; }
             
-            li {
-                font-size: 0.95em;
+            .lista-horizontal {
+                gap: 12px;
+            }
+            
+            .item-lista {
                 padding: 10px 15px;
-                flex: 1 1 140px;
             }
             
             .formulario {
@@ -239,10 +237,16 @@
             h2 { font-size: 1.2em; }
             h3 { font-size: 1em; }
             
-            li {
-                font-size: 0.9em;
+            .lista-horizontal {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .item-lista {
+                width: 100%;
+                max-width: 300px;
                 padding: 8px 12px;
-                flex: 1 1 120px;
             }
             
             .formulario textarea {
@@ -274,21 +278,20 @@
         <div>
             <h1>YLÊ IJEXA OXUM MIWÁ</h1>
             <h2>Pai Jonatas</h2>
-            <h3>Consultas espirituais e orientação com base na sabedoria dos Orixás</h3>
+            <h3 style="text-align: center; margin-bottom: 30px;">Consultas espirituais e orientação com base na sabedoria dos Orixás</h3>
 
-            <ul><h3>
-                <p>🔮 Consultas espirituais</p>
-                <p>🌀 Jogo de búzios</p>
-                <p>🃏 Leitura de cartas</p>
-                <p>🔥 Consultas com Exu</p>
-                <p>💧 Limpezas espirituais</p>
-                <p>🌿 Trabalhos afins</p>
-                <p>🌟 Abertura de caminhos</p>
-                <p>✨ Proteção espiritual</p>
-                <p>🌙 Banhos de ervas</p>
-                <p>⚡ Descargas energéticas</p>
-                </h3>
-                </ul>
+            <div class="lista-horizontal">
+                <h3 class="item-lista">🔮 Consultas espirituais</h3>
+                <h3 class="item-lista">🌀 Jogo de búzios</h3>
+                <h3 class="item-lista">🃏 Leitura de cartas</h3>
+                <h3 class="item-lista">🔥 Consultas com Exu</h3>
+                <h3 class="item-lista">💧 Limpezas espirituais</h3>
+                <h3 class="item-lista">🌿 Trabalhos afins</h3>
+                <h3 class="item-lista">🌟 Abertura de caminhos</h3>
+                <h3 class="item-lista">✨ Proteção espiritual</h3>
+                <h3 class="item-lista">🌙 Banhos de ervas</h3>
+                <h3 class="item-lista">⚡ Descargas energéticas</h3>
+            </div>
         </div>
 
         <div>

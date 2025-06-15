@@ -23,43 +23,45 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 20px;
+            padding: 30px 15px;
+            position: relative;
+            overflow-x: hidden;
         }
 
         .conteudo {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.75);
             width: 100%;
             max-width: 900px;
-            padding: 50px 5%;
+            padding: 40px 5%;
             box-shadow: 0 0 25px rgba(255, 217, 0, 0.7);
             border-radius: 15px;
-            margin: 30px 0;
-            min-height: 80vh;
+            margin: 20px 0;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            position: relative;
+            z-index: 2;
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             color: #FFD700;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             letter-spacing: 1px;
         }
 
         h2 {
-            font-size: 1.8em;
+            font-size: 1.6em;
             color: #FFD700;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         h3 {
-            font-size: 1.6em;
+            font-size: 1.3em;
             color: #ADD8E6;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             line-height: 1.4;
         }
 
@@ -68,83 +70,90 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 25px;
-            margin: 40px 0;
+            gap: 15px;
+            margin: 25px 0;
         }
 
         li {
             background: rgba(255, 215, 0, 0.2);
-            padding: 15px 25px;
-            border-radius: 12px;
-            font-size: 1.3em;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 1em;
             color: #FFFACD;
-            box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+            box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
             border: 1px solid rgba(255, 215, 0, 0.3);
             transition: transform 0.3s;
+            text-align: center;
+            flex: 1 1 160px;
+            max-width: 200px;
         }
 
         li:hover {
-            transform: scale(1.05);
-            background: rgba(255, 215, 0, 0.3);
+            transform: scale(1.03);
+            background: rgba(255, 215, 0, 0.25);
         }
 
         .formulario {
-            background-color: rgba(0, 0, 0, 0.4);
-            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 35px;
             border: 2px solid #FFD700;
             border-radius: 15px;
             width: 100%;
-            max-width: 600px;
-            margin: 0 auto 40px auto;
-            color: #fff;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+            max-width: 700px;
+            margin: 20px auto;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
         }
 
         .formulario textarea {
             width: 100%;
-            height: 85%;
-            padding: 65px;
-            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95);
             border: 1px solid #FFD700;
             border-radius: 10px;
-            font-size: 2.1em;
+            font-size: 1.2em;
             color: #333;
             resize: vertical;
-            min-height: 150px;
-            margin-bottom: 60px;
+            min-height: 200px;
+            margin-bottom: 25px;
+            line-height: 1.5;
         }
 
         .formulario button,
         .contato button {
             background: linear-gradient(to bottom, #FFD700, #e6c200);
             color: #000;
-            padding: 15px;
+            padding: 18px;
             border: none;
             border-radius: 10px;
-            font-size: 1.8em;
+            font-size: 1.3em;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
             margin-top: 15px;
             transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .formulario button:hover,
         .contato button:hover {
             background: linear-gradient(to bottom, #e6c200, #FFD700);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
         }
 
         .contato {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         .contato p {
-            margin-top: 25px;
+            margin-top: 20px;
             font-style: italic;
-            font-size: 1.2em;
+            font-size: 1.1em;
             line-height: 1.6;
             max-width: 800px;
             margin-left: auto;
@@ -152,70 +161,114 @@
             color: #FFFACD;
         }
 
-        /* Abelhas 🐝 */
+        /* Abelhas 🐝 - ATRÁS do conteúdo com movimento suave */
         .abelha {
             position: fixed;
-            width: 50px;
-            animation: voar 25s infinite linear;
-            opacity: 0.8;
-            z-index: 100;
+            width: 40px;
+            opacity: 0.6;
+            z-index: 1;
+            animation: voar 30s infinite linear;
+            filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
+        }
+
+        .abelha img {
+            width: 100%;
+            height: auto;
         }
 
         @keyframes voar {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(200px, 150px) rotate(90deg); }
-            50% { transform: translate(400px, -100px) rotate(180deg); }
-            75% { transform: translate(-200px, 200px) rotate(270deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
+            0% { 
+                transform: translate(10vw, 10vh) rotate(0deg) scale(0.9);
+                opacity: 0.5;
+            }
+            25% { 
+                transform: translate(70vw, 20vh) rotate(90deg) scale(1);
+            }
+            50% { 
+                transform: translate(80vw, 60vh) rotate(180deg) scale(0.9);
+            }
+            75% { 
+                transform: translate(20vw, 70vh) rotate(270deg) scale(1);
+            }
+            100% { 
+                transform: translate(10vw, 10vh) rotate(360deg) scale(0.9);
+                opacity: 0.5;
+            }
         }
 
         /* Responsivo */
         @media (max-width: 768px) {
             .conteudo {
-                padding: 40px 20px;
-                min-height: auto;
+                padding: 30px 15px;
             }
             
-            h1 { font-size: 2.5em; }
-            h2 { font-size: 1.5em; }
-            h3 { font-size: 1.3em; }
+            h1 { font-size: 2.2em; }
+            h2 { font-size: 1.4em; }
+            h3 { font-size: 1.1em; }
             
             li {
-                font-size: 1.1em;
-                padding: 12px 20px;
+                font-size: 0.95em;
+                padding: 10px 15px;
+                flex: 1 1 140px;
             }
             
             .formulario {
-                padding: 20px;
+                padding: 25px;
+                max-width: 90%;
+            }
+            
+            .formulario textarea {
+                min-height: 180px;
+                font-size: 1.1em;
+                padding: 15px;
+            }
+            
+            .formulario button,
+            .contato button {
+                padding: 16px;
+                font-size: 1.2em;
+            }
+
+            .abelha {
+                width: 30px;
             }
         }
 
         @media (max-width: 480px) {
-            h1 { font-size: 2em; }
-            h2 { font-size: 1.3em; }
-            h3 { font-size: 1.1em; }
+            h1 { font-size: 1.9em; }
+            h2 { font-size: 1.2em; }
+            h3 { font-size: 1em; }
             
             li {
+                font-size: 0.9em;
+                padding: 8px 12px;
+                flex: 1 1 120px;
+            }
+            
+            .formulario textarea {
+                min-height: 160px;
                 font-size: 1em;
-                padding: 10px 15px;
-                width: 100%;
-                text-align: center;
+            }
+            
+            .formulario button,
+            .contato button {
+                padding: 14px;
+                font-size: 1.1em;
             }
             
             .abelha {
-                width: 35px;
+                width: 25px;
             }
         }
     </style>
 </head>
 
 <body>
-
-    <!-- Abelhas voando 🍯🐝 -->
-    <div class="abelha" style="top: 10%; left: 15%;"><img src="abelha.png" alt="Abelha"></div>
-    <div class="abelha" style="top: 60%; left: 80%;"><img src="abelha.png" alt="Abelha"></div>
-    <div class="abelha" style="top: 30%; left: 5%;"><img src="abelha.png" alt="Abelha"></div>
-    <div class="abelha" style="top: 80%; left: 50%;"><img src="abelha.png" alt="Abelha"></div>
+    <!-- Abelhas voando ATRÁS do conteúdo -->
+    <div class="abelha" style="top: 10%; left: 10%; animation-delay: 0s"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 30%; left: 80%; animation-delay: 5s"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 70%; left: 15%; animation-delay: 10s"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 50%; left: 70%; animation-delay: 15s"><img src="abelha.png" alt="Abelha"></div>
 
     <div class="conteudo">
         <div>
@@ -239,13 +292,13 @@
 
         <div>
             <form id="formMensagem" class="formulario">
-                <textarea id="mensagem" name="mensagem" rows="6" placeholder="Escreva aqui sua dúvida, pedido ou intenção espiritual..." required></textarea>
-                <button type="button" onclick="enviarWhatsApp()">Enviar Mensagem pelo WhatsApp</button>
+                <textarea id="mensagem" name="mensagem" placeholder="✨ Escreva aqui sua dúvida, pedido ou intenção espiritual..." required></textarea>
+                <button type="button" onclick="enviarWhatsApp()">📩 Enviar Mensagem</button>
             </form>
 
             <div class="contato">
                 <a href="https://wa.me/5551991975798?text=Olá%20Pai%20Jonatas,%20gostaria%20de%20agendar%20uma%20consulta%20espiritual." target="_blank">
-                    <button>Agendar Consulta via WhatsApp</button>
+                    <button>📅 Agendar Consulta</button>
                 </a>
                 <p>"A sabedoria dos Orixás ilumina nosso caminho. Através da fé e do axé, encontramos o equilíbrio entre o material e o espiritual, trazendo luz às nossas vidas."</p>
             </div>
@@ -254,12 +307,11 @@
 
     <script>
         function enviarWhatsApp() {
-            let mensagem = document.getElementById("mensagem").value;
-            let numero = "5551991975798";
-            let url = `https://wa.me/${numero}?text=${encodeURIComponent("Olá Pai Jonatas,\n\n" + mensagem)}`;
-            window.open(url, '_blank');
+            const mensagem = document.getElementById("mensagem").value;
+            const numero = "5551991975798";
+            const texto = `Olá Pai Jonatas,%0A%0AGostaria de ajuda com:%0A%0A${encodeURIComponent(mensagem)}`;
+            window.open(`https://wa.me/${numero}?text=${texto}`, '_blank');
         }
     </script>
-
 </body>
 </html>

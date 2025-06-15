@@ -5,11 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>YLÊ IJEXA OXUM MIWÁ - Pai Jonatas</title>
     <style>
-        /* [OUTROS ESTILOS PERMANECEM IGUAIS...] */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-image: url('Oxum 4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            text-shadow: 1px 1px 3px #000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .conteudo {
+            background: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            max-width: 900px;
+            padding: 50px 5%;
+            box-shadow: 0 0 25px rgba(255, 217, 0, 0.7);
+            border-radius: 15px;
+            margin: 30px 0;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            font-size: 1.6em;
+            color: #ADD8E6;
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.4;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        li {
+            background: rgba(255, 215, 0, 0.2);
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-size: 1.3em;
+            color: #FFFACD;
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        li:hover {
+            transform: scale(1.05);
+            background: rgba(255, 215, 0, 0.3);
+        }
 
         .formulario {
             background-color: rgba(0, 0, 0, 0.4);
-            padding: 25px;
+            padding: 30px;
             border: 2px solid #FFD700;
             border-radius: 15px;
             width: 100%;
@@ -17,84 +98,111 @@
             margin: 0 auto 40px auto;
             color: #fff;
             box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
-            display: flex;
-            flex-direction: column;
-            gap: 20px; /* Espaço entre elementos */
         }
 
         .formulario textarea {
             width: 100%;
-            padding: 20px;
+            padding: 15px;
             background-color: rgba(255, 255, 255, 0.9);
             border: 1px solid #FFD700;
-            border-radius: 12px;
+            border-radius: 10px;
             font-size: 1.1em;
             color: #333;
             resize: vertical;
-            min-height: 180px; /* Altura aumentada */
-            margin: 0;
-        }
-
-        .botoes-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            width: 100%;
+            min-height: 150px;
+            margin-bottom: 15px;
         }
 
         .formulario button,
         .contato button {
             background: linear-gradient(to bottom, #FFD700, #e6c200);
             color: #000;
-            padding: 18px;
+            padding: 15px;
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             font-size: 1.2em;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
             box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+            margin-top: 15px;
             transition: all 0.3s;
-            text-align: center;
         }
 
-        /* MOBILE - TELAS PEQUENAS */
+        .formulario button:hover,
+        .contato button:hover {
+            background: linear-gradient(to bottom, #e6c200, #FFD700);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        }
+
+        .contato {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contato p {
+            margin-top: 25px;
+            font-style: italic;
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #FFFACD;
+        }
+
+        /* Abelhas 🐝 */
+        .abelha {
+            position: fixed;
+            width: 50px;
+            animation: voar 25s infinite linear;
+            opacity: 0.8;
+            z-index: 100;
+        }
+
+        @keyframes voar {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(200px, 150px) rotate(90deg); }
+            50% { transform: translate(400px, -100px) rotate(180deg); }
+            75% { transform: translate(-200px, 200px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+
+        /* Responsivo */
         @media (max-width: 768px) {
+            .conteudo {
+                padding: 40px 20px;
+                min-height: auto;
+            }
+            
+            h1 { font-size: 2.5em; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1.3em; }
+            
+            li {
+                font-size: 1.1em;
+                padding: 12px 20px;
+            }
+            
             .formulario {
                 padding: 20px;
-                margin-bottom: 30px;
-            }
-            
-            .formulario textarea {
-                min-height: 220px; /* Altura ainda maior em mobile */
-                padding: 15px;
-                font-size: 1em;
-            }
-            
-            .botoes-container {
-                gap: 12px;
-            }
-            
-            .formulario button,
-            .contato button {
-                padding: 16px;
-                font-size: 1.1em;
             }
         }
 
         @media (max-width: 480px) {
-            .formulario {
-                padding: 15px;
-            }
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.3em; }
+            h3 { font-size: 1.1em; }
             
-            .formulario textarea {
-                min-height: 250px; /* Máxima altura em celulares */
-            }
-            
-            .formulario button,
-            .contato button {
-                padding: 15px;
+            li {
                 font-size: 1em;
+                padding: 10px 15px;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .abelha {
+                width: 35px;
             }
         }
     </style>
@@ -102,25 +210,55 @@
 
 <body>
 
-    <!-- [RESTANTE DO HTML PERMANECE IGUAL...] -->
+    <!-- Abelhas voando 🍯🐝 -->
+    <div class="abelha" style="top: 10%; left: 15%;"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 60%; left: 80%;"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 30%; left: 5%;"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 80%; left: 50%;"><img src="abelha.png" alt="Abelha"></div>
 
     <div class="conteudo">
-        <!-- [CONTEÚDO ANTERIOR...] -->
+        <div>
+            <h1>YLÊ IJEXA OXUM MIWÁ</h1>
+            <h2>Pai Jonatas</h2>
+            <h3>Consultas espirituais e orientação com base na sabedoria dos Orixás</h3>
 
-        <form id="formMensagem" class="formulario">
-            <textarea id="mensagem" name="mensagem" placeholder="Escreva aqui sua dúvida, pedido ou intenção espiritual..." required></textarea>
-            
-            <div class="botoes-container">
-                <button type="button" onclick="enviarWhatsApp()">Enviar Mensagem</button>
+            <ul>
+                <li>🔮 Consultas espirituais</li>
+                <li>🌀 Jogo de búzios</li>
+                <li>🃏 Leitura de cartas</li>
+                <li>🔥 Consultas com Exu</li>
+                <li>💧 Limpezas espirituais</li>
+                <li>🌿 Trabalhos afins</li>
+                <li>🌟 Abertura de caminhos</li>
+                <li>✨ Proteção espiritual</li>
+                <li>🌙 Banhos de ervas</li>
+                <li>⚡ Descargas energéticas</li>
+            </ul>
+        </div>
+
+        <div>
+            <form id="formMensagem" class="formulario">
+                <textarea id="mensagem" name="mensagem" rows="6" placeholder="Escreva aqui sua dúvida, pedido ou intenção espiritual..." required></textarea>
+                <button type="button" onclick="enviarWhatsApp()">Enviar Mensagem pelo WhatsApp</button>
+            </form>
+
+            <div class="contato">
                 <a href="https://wa.me/5551991975798?text=Olá%20Pai%20Jonatas,%20gostaria%20de%20agendar%20uma%20consulta%20espiritual." target="_blank">
-                    <button type="button">Agendar Consulta</button>
+                    <button>Agendar Consulta via WhatsApp</button>
                 </a>
+                <p>"A sabedoria dos Orixás ilumina nosso caminho. Através da fé e do axé, encontramos o equilíbrio entre o material e o espiritual, trazendo luz às nossas vidas."</p>
             </div>
-        </form>
-
-        <!-- [RESTANTE DO HTML...] -->
+        </div>
     </div>
 
-    <!-- [SCRIPTS PERMANECEM IGUAIS...] -->
+    <script>
+        function enviarWhatsApp() {
+            let mensagem = document.getElementById("mensagem").value;
+            let numero = "5551991975798";
+            let url = `https://wa.me/${numero}?text=${encodeURIComponent("Olá Pai Jonatas,\n\n" + mensagem)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+
 </body>
 </html>

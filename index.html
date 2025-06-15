@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>YLÊ IJEXA OXUM MIWÁ - Pai Jonatas</title>
-    <link rel="stylesheet" href="estilo.css">
-
     <style>
         * {
             margin: 0;
@@ -18,31 +16,51 @@
             background-image: url('Oxum 4.jpg');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
+            background-attachment: fixed;
             color: #fff;
             text-shadow: 1px 1px 3px #000;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
         }
 
         .conteudo {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.7);
             width: 100%;
-            padding: 40px 5%;
-            box-shadow: 0 0 15px rgba(255, 217, 0, 0.925);
+            max-width: 900px;
+            padding: 50px 5%;
+            box-shadow: 0 0 25px rgba(255, 217, 0, 0.7);
+            border-radius: 15px;
+            margin: 30px 0;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         h1 {
-            font-size: 2.8em;
+            font-size: 3em;
             color: #FFD700;
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 30px;
         }
 
         h3 {
-            font-size: 1.4em;
+            font-size: 1.6em;
             color: #ADD8E6;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+            line-height: 1.4;
         }
 
         ul {
@@ -50,102 +68,142 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
+            gap: 25px;
+            margin: 40px 0;
         }
 
         li {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 1.2em;
+            background: rgba(255, 215, 0, 0.2);
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-size: 1.3em;
             color: #FFFACD;
-            box-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        li:hover {
+            transform: scale(1.05);
+            background: rgba(255, 215, 0, 0.3);
         }
 
         .formulario {
-            background-color: rgba(255, 255, 255, 0.12);
-            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 30px;
             border: 2px solid #FFD700;
-            border-radius: 12px;
+            border-radius: 15px;
             width: 100%;
-            max-width: 500px;
-            margin: 0 auto 20px auto;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
             color: #fff;
-            box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
         }
 
         .formulario textarea {
             width: 100%;
-            padding: 10px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1em;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #FFD700;
+            border-radius: 10px;
+            font-size: 1.1em;
             color: #333;
-            resize: none;
+            resize: vertical;
+            min-height: 150px;
+            margin-bottom: 15px;
         }
 
         .formulario button,
         .contato button {
-            background-color: #FFD700;
+            background: linear-gradient(to bottom, #FFD700, #e6c200);
             color: #000;
-            padding: 12px;
+            padding: 15px;
             border: none;
-            border-radius: 8px;
-            font-size: 1.1em;
+            border-radius: 10px;
+            font-size: 1.2em;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
-            box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
-            margin-top: 10px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+            margin-top: 15px;
+            transition: all 0.3s;
         }
 
         .formulario button:hover,
         .contato button:hover {
-            background-color: #e6c200;
+            background: linear-gradient(to bottom, #e6c200, #FFD700);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
         }
 
         .contato {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         .contato p {
-            margin-top: 15px;
+            margin-top: 25px;
             font-style: italic;
+            font-size: 1.2em;
+            line-height: 1.6;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            color: #FFFACD;
         }
 
         /* Abelhas 🐝 */
         .abelha {
-            position: absolute;
-            width: 40px;
-            animation: voar 20s infinite alternate ease-in-out;
+            position: fixed;
+            width: 50px;
+            animation: voar 25s infinite linear;
+            opacity: 0.8;
+            z-index: 100;
         }
 
         @keyframes voar {
-            0% { transform: translateX(0) translateY(0); }
-            25% { transform: translateX(-100px) translateY(50px); }
-            50% { transform: translateX(100px) translateY(-50px); }
-            75% { transform: translateX(-150px) translateY(70px); }
-            100% { transform: translateX(150px) translateY(-70px); }
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(200px, 150px) rotate(90deg); }
+            50% { transform: translate(400px, -100px) rotate(180deg); }
+            75% { transform: translate(-200px, 200px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
         }
 
         /* Responsivo */
         @media (max-width: 768px) {
-            h1 { font-size: 2.2em; }
-            h3 { font-size: 1.1em; }
-            li { font-size: 1em; }
-            ul { gap: 12px; }
-            .abelha { width: 30px; }
+            .conteudo {
+                padding: 40px 20px;
+                min-height: auto;
+            }
+            
+            h1 { font-size: 2.5em; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1.3em; }
+            
+            li {
+                font-size: 1.1em;
+                padding: 12px 20px;
+            }
+            
+            .formulario {
+                padding: 20px;
+            }
         }
 
         @media (max-width: 480px) {
-            h1 { font-size: 1.9em; }
-            li { font-size: 0.95em; }
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.3em; }
+            h3 { font-size: 1.1em; }
+            
+            li {
+                font-size: 1em;
+                padding: 10px 15px;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .abelha {
+                width: 35px;
+            }
         }
     </style>
 </head>
@@ -153,35 +211,43 @@
 <body>
 
     <!-- Abelhas voando 🍯🐝 -->
-    <div class="abelha" style="top: 8%; left: 12%;"><img src="abelha.png" alt="Abelha"></div>
-    <div class="abelha" style="top: 50%; left: 70%;"><img src="abelha.png" alt="Abelha"></div>
-    <div class="abelha" style="top: 85%; left: 40%;"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 10%; left: 15%;"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 60%; left: 80%;"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 30%; left: 5%;"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 80%; left: 50%;"><img src="abelha.png" alt="Abelha"></div>
 
     <div class="conteudo">
-        <h1>YLÊ IJEXA OXUM MIWÁ </h1>
-        <h2>Pai Jonatas</h2>
-        <h3>Consultas espirituais e orientação com base na sabedoria dos Orixás.</h3>
+        <div>
+            <h1>YLÊ IJEXA OXUM MIWÁ</h1>
+            <h2>Pai Jonatas</h2>
+            <h3>Consultas espirituais e orientação com base na sabedoria dos Orixás</h3>
 
-        <ul>
-            <li>🔮 Consultas espirituais</li>
-            <li>🌀 Jogo de búzios</li>
-            <li>🃏 Leitura de cartas</li>
-            <li>🔥 Consultas com Exu</li>
-            <li>💧 Limpezas espirituais</li>
-            <li>🌿 Trabalhos afins</li>
-            <li>🌟 Abrimento de caminhos</li>
-        </ul>
+            <ul>
+                <li>🔮 Consultas espirituais</li>
+                <li>🌀 Jogo de búzios</li>
+                <li>🃏 Leitura de cartas</li>
+                <li>🔥 Consultas com Exu</li>
+                <li>💧 Limpezas espirituais</li>
+                <li>🌿 Trabalhos afins</li>
+                <li>🌟 Abertura de caminhos</li>
+                <li>✨ Proteção espiritual</li>
+                <li>🌙 Banhos de ervas</li>
+                <li>⚡ Descargas energéticas</li>
+            </ul>
+        </div>
 
-        <form id="formMensagem" class="formulario">
-            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua dúvida, pedido ou intenção..." required></textarea>
-            <button type="button" onclick="enviarWhatsApp()">Enviar pelo WhatsApp</button>
-        </form>
+        <div>
+            <form id="formMensagem" class="formulario">
+                <textarea id="mensagem" name="mensagem" rows="6" placeholder="Escreva aqui sua dúvida, pedido ou intenção espiritual..." required></textarea>
+                <button type="button" onclick="enviarWhatsApp()">Enviar Mensagem pelo WhatsApp</button>
+            </form>
 
-        <div class="contato">
-            <a href="https://wa.me/5551991975798?text=Olá%2C%20gostaria%20de%20uma%20consulta%20espiritual." target="_blank">
-                <button>Agendar Consulta via WhatsApp</button>
-            </a>
-            <p>"O cuidado espiritual é um ato de amor e respeito à sua própria história. Estamos aqui para te ajudar a trilhar seu caminho com força, fé e equilíbrio."</p>
+            <div class="contato">
+                <a href="https://wa.me/5551991975798?text=Olá%20Pai%20Jonatas,%20gostaria%20de%20agendar%20uma%20consulta%20espiritual." target="_blank">
+                    <button>Agendar Consulta via WhatsApp</button>
+                </a>
+                <p>"A sabedoria dos Orixás ilumina nosso caminho. Através da fé e do axé, encontramos o equilíbrio entre o material e o espiritual, trazendo luz às nossas vidas."</p>
+            </div>
         </div>
     </div>
 
@@ -189,7 +255,7 @@
         function enviarWhatsApp() {
             let mensagem = document.getElementById("mensagem").value;
             let numero = "5551991975798";
-            let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+            let url = `https://wa.me/${numero}?text=${encodeURIComponent("Olá Pai Jonatas,\n\n" + mensagem)}`;
             window.open(url, '_blank');
         }
     </script>

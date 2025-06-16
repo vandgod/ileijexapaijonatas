@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YLÊ IJEXA OXUM MIWÁ - Pai Jonatas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-image: url('Oxum 4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            text-shadow: 1px 1px 3px #000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2vh 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .conteudo {
+            background: rgba(0, 0, 0, 0.75);
+            width: 90%;
+            max-width: 1200px;
+            padding: 4vh 5%;
+            box-shadow: 0 0 25px rgba(255, 217, 0, 0.7);
+            border-radius: 15px;
+            margin: 2vh 0;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+            min-height: 90vh;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 2vh;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 2vh;
+        }
+
+        h3 {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: #ADD8E6;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .lista-horizontal {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5vh 2vw;
+            margin: 4vh 0;
+        }
+
+        .item-lista {
+            background: rgba(255, 215, 0, 0.2);
+            padding: 1.5vh 2vw;
+            border-radius: 10px;
+            color: #FFFACD;
+            box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s;
+            text-align: center;
+            flex: 0 0 auto;
+        }
+
+        .item-lista:hover {
+            transform: scale(1.05);
+            background: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+        }
+
+        .botao-voltar {
+            background: linear-gradient(to bottom, #FFD700, #5e5003);
+            color: #000;
+            padding: 2vh 4vw;
+            border: none;
+            border-radius: 10px;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+            margin: 4vh auto 0;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .botao-voltar:hover {
+            background: linear-gradient(to bottom, #e6c200, #FFD700);
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
+        }
+
+        .contato {
+            text-align: center;
+            margin-top: 4vh;
+        }
+
+        .contato p {
+            margin-top: 3vh;
+            font-style: italic;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #FFFACD;
+        }
+
+        /* Abelhas 🐝 - ATRÁS do conteúdo com movimento suave */
+        .abelha {
+            position: fixed;
+            width: clamp(30px, 4vw, 50px);
+            opacity: 0.6;
+            z-index: 1;
+            animation: voar 30s infinite linear;
+            filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
+        }
+
+        .abelha img {
+            width: 100%;
+            height: auto;
+        }
+
+        @keyframes voar {
+            0% { 
+                transform: translate(5vw, 5vh) rotate(0deg) scale(0.9);
+                opacity: 0.5;
+            }
+            25% { 
+                transform: translate(75vw, 15vh) rotate(90deg) scale(1);
+            }
+            50% { 
+                transform: translate(85vw, 55vh) rotate(180deg) scale(0.9);
+            }
+            75% { 
+                transform: translate(15vw, 65vh) rotate(270deg) scale(1);
+            }
+            100% { 
+                transform: translate(5vw, 5vh) rotate(360deg) scale(0.9);
+                opacity: 0.5;
+            }
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .conteudo {
+                width: 95%;
+                padding: 3vh 4%;
+            }
+            
+            .lista-horizontal {
+                gap: 1vh 3.5vw;
+            }
+            
+            .item-lista {
+                padding: 1vh 1.5vw;
+                font-size: 0.9rem;
+            }
+            
+            .botao-voltar {
+                padding: 1.5vh 3vw;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .conteudo {
+                width: 98%;
+                padding: 2vh 3%;
+            }
+            
+            .lista-horizontal {
+                flex-direction: column;
+                align-items: center;
+                gap: 1vh;
+            }
+            
+            .item-lista {
+                width: 100%;
+                max-width: 300px;
+                padding: 1vh;
+            }
+            
+            .botao-voltar {
+                padding: 2vh 4vw;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Abelhas voando ATRÁS do conteúdo -->
+    <div class="abelha" style="top: 5%; left: 5%; animation-delay: 0s"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 25%; left: 75%; animation-delay: 5s"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 65%; left: 10%; animation-delay: 10s"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 45%; left: 65%; animation-delay: 15s"><img src="abelha.png" alt="Abelha"></div>
+
+    <div class="conteudo">
+        <div>
+            <h1>YLÊ IJEXA OXUM MIWÁ</h1>
+            <h2>Pai Jonatas</h2>
+            <h2 style="text-align: center; margin-bottom: 3vh;">CONSULTAS ESPIRITUAIS</h2>
+
+            <div class="lista-horizontal" style="flex-direction: column; align-items: flex-start; background: rgba(0,0,0,0.7); padding: 20px; border: 1px solid #FFD700; border-radius: 10px; max-width: 800px; margin: 0 auto;">
+    <h3 style="color: #FFD700; text-align: center; width: 100%; margin-bottom: 15px;">Consultas Espirituais: Um Caminho de Luz e Orientação</h3>
+    
+    <p style="margin-bottom: 15px; line-height: 1.6; text-align: justify;">
+        As consultas espirituais são momentos sagrados de conexão com os Orixás e guias espirituais, onde buscamos clareza, proteção e direcionamento para os desafios da vida. Através de métodos divinatórios como o jogo de búzios, cartas ou a intuição mediúnica, o Pai Jonatas abre um portal de sabedoria ancestral para ajudar você a:
+    </p>
+    
+    <ul style="margin-bottom: 15px; padding-left: 20px; list-style-type: none;">
+        <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
+            <span style="color: #FFD700; position: absolute; left: 0;">✔</span> <strong>Compreender momentos difíceis</strong> – Identificando energias negativas, desafios kármicos ou interferências espirituais.
+        </li>
+        <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
+            <span style="color: #FFD700; position: absolute; left: 0;">✔</span> <strong>Receber orientação dos Orixás</strong> – Mensagens diretas de entidades como Oxum (amor e prosperidade), Xangô (justiça) ou Exu (abertura de caminhos).
+        </li>
+        <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
+            <span style="color: #FFD700; position: absolute; left: 0;">✔</span> <strong>Desbloquear energias estagnadas</strong> – Com indicações de banhos, ebós ou oferendas específicas para seu caso.
+        </li>
+        <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
+            <span style="color: #FFD700; position: absolute; left: 0;">✔</span> <strong>Prever e preparar-se para o futuro</strong> – Alertas e conselhos para tomar decisões alinhadas com seu destino.
+        </li>
+    </ul>
+    
+    <h4 style="color: #ADD8E6; margin: 15px 0 10px;">Como funciona?</h4>
+    <p style="margin-bottom: 15px; line-height: 1.6; text-align: justify;">
+        Cada consulta é única, pois respeita o momento espiritual do consulente. O Pai Jonatas, como intermediário dos Orixás, interpreta os sinais e oferece soluções práticas e espirituais, sempre com ética e respeito às leis do axé.
+    </p>
+    
+    <blockquote style="border-left: 3px solid #FFD700; padding-left: 15px; margin: 20px 0; font-style: italic; color: #FFFACD;">
+        "Não há perguntas erradas, apenas caminhos que precisam ser iluminados. A espiritualidade fala através da simplicidade."
+    </blockquote>
+    
+    <p style="text-align: center; margin-top: 20px; font-weight: bold; color: #FFD700;">
+        🔮 Agende sua consulta e permita que o sagrado guie seus passos.
+    </p>
+</div>
+        </div>
+
+        <div class="contato">
+            <a href="index.html" class="botao-voltar">← Voltar</a>
+            <p>"A sabedoria dos Orixás ilumina nosso caminho. Através da fé e do axé, encontramos o equilíbrio entre o material e o espiritual, trazendo luz às nossas vidas."</p>
+        </div>
+    </div>
+</body>
+</html>

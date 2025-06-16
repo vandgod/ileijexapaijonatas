@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YLÊ IJEXA OXUM MIWÁ - Pai Jonatas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-image: url('Oxum 4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            text-shadow: 1px 1px 3px #000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2vh 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .conteudo {
+            background: rgba(0, 0, 0, 0.75);
+            width: 90%;
+            max-width: 1200px;
+            padding: 4vh 5%;
+            box-shadow: 0 0 25px rgba(255, 217, 0, 0.7);
+            border-radius: 15px;
+            margin: 2vh 0;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+            min-height: 90vh;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 2vh;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 2vh;
+        }
+
+        h3 {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: #ADD8E6;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .lista-horizontal {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5vh 2vw;
+            margin: 4vh 0;
+        }
+
+        .item-lista {
+            background: rgba(255, 215, 0, 0.2);
+            padding: 1.5vh 2vw;
+            border-radius: 10px;
+            color: #FFFACD;
+            box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s;
+            text-align: center;
+            flex: 0 0 auto;
+        }
+
+        .item-lista:hover {
+            transform: scale(1.05);
+            background: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+        }
+
+        .botao-voltar {
+            background: linear-gradient(to bottom, #FFD700, #5e5003);
+            color: #000;
+            padding: 2vh 4vw;
+            border: none;
+            border-radius: 10px;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+            margin: 4vh auto 0;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .botao-voltar:hover {
+            background: linear-gradient(to bottom, #e6c200, #FFD700);
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
+        }
+
+        .contato {
+            text-align: center;
+            margin-top: 4vh;
+        }
+
+        .contato p {
+            margin-top: 3vh;
+            font-style: italic;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #FFFACD;
+        }
+
+        /* Borda com elementos místicos */
+        .trabalhos-border {
+            position: relative;
+            padding: 30px;
+        }
+
+        .trabalhos-border::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            background-image: url('');
+            background-size: 30px 30px;
+            background-repeat: repeat;
+            opacity: 0.6;
+            z-index: -1;
+            border-radius: 20px;
+        }
+
+        /* Abelhas 🐝 - ATRÁS do conteúdo com movimento suave */
+        .abelha {
+            position: fixed;
+            width: clamp(30px, 4vw, 50px);
+            opacity: 0.6;
+            z-index: 1;
+            animation: voar 30s infinite linear;
+            filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
+        }
+
+        .abelha img {
+            width: 100%;
+            height: auto;
+        }
+
+        @keyframes voar {
+            0% { 
+                transform: translate(5vw, 5vh) rotate(0deg) scale(0.9);
+                opacity: 0.5;
+            }
+            25% { 
+                transform: translate(75vw, 15vh) rotate(90deg) scale(1);
+            }
+            50% { 
+                transform: translate(85vw, 55vh) rotate(180deg) scale(0.9);
+            }
+            75% { 
+                transform: translate(15vw, 65vh) rotate(270deg) scale(1);
+            }
+            100% { 
+                transform: translate(5vw, 5vh) rotate(360deg) scale(0.9);
+                opacity: 0.5;
+            }
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .conteudo {
+                width: 95%;
+                padding: 3vh 4%;
+            }
+            
+            .lista-horizontal {
+                gap: 1vh 3.5vw;
+            }
+            
+            .item-lista {
+                padding: 1vh 1.5vw;
+                font-size: 0.9rem;
+            }
+            
+            .botao-voltar {
+                padding: 1.5vh 3vw;
+            }
+
+            .trabalhos-border::before {
+                background-size: 25px 25px;
+                top: -10px;
+                left: -10px;
+                right: -10px;
+                bottom: -10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .conteudo {
+                width: 98%;
+                padding: 2vh 3%;
+            }
+            
+            .lista-horizontal {
+                flex-direction: column;
+                align-items: center;
+                gap: 1vh;
+            }
+            
+            .item-lista {
+                width: 100%;
+                max-width: 300px;
+                padding: 1vh;
+            }
+            
+            .botao-voltar {
+                padding: 2vh 4vw;
+                font-size: 1.2rem;
+            }
+
+            .trabalhos-border::before {
+                background-size: 20px 20px;
+                top: -8px;
+                left: -8px;
+                right: -8px;
+                bottom: -8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Abelhas voando ATRÁS do conteúdo -->
+    <div class="abelha" style="top: 5%; left: 5%; animation-delay: 0s"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 25%; left: 75%; animation-delay: 5s"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 65%; left: 10%; animation-delay: 10s"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 45%; left: 65%; animation-delay: 15s"><img src="abelha.png" alt="Abelha"></div>
+
+    <div class="conteudo">
+        <div>
+            <h1>YLÊ IJEXA OXUM MIWÁ</h1>
+            <h2>Pai Jonatas</h2>
+            <h2 style="text-align: center; margin-bottom: 3vh;">TRABALHOS AFINS</h2>
+
+            <div class="trabalhos-border" style="flex-direction: column; align-items: flex-start; background: rgba(0,0,0,0.7); padding: 20px; border-radius: 10px; max-width: 800px; margin: 0 auto; position: relative; overflow: hidden;border: 2px solid #FFD700; border-radius: 5px; box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);">
+                
+                <img src="trabalho.png" style="float: right; width: 150px; margin-left: 20px; border: 2px solid #FFD700; border-radius: 5px; box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);" alt="Trabalhos Espirituais">
+                
+                <h3 style="color: #FFD700; text-align: center; width: 100%; margin-bottom: 15px; text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);">Serviços Espirituais Complementares</h3>
+                
+                <p style="margin-bottom: 15px; line-height: 1.6; text-align: justify;">
+                    Além das consultas tradicionais, Pai Jonatas realiza diversos trabalhos espirituais específicos, sempre com ética e respeito às leis do axé. Cada trabalho é personalizado conforme a necessidade espiritual do consulente.
+                </p>
+                
+                <ul style="margin-bottom: 15px; padding-left: 20px; list-style-type: none;">
+                    <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
+                        <span style="color: #FFD700; position: absolute; left: 0; font-size: 1.2em;">✨</span> <strong>Amarrações Espirituais</strong> – Para união e harmonia nos relacionamentos (sempre dentro da lei divina)
+                    </li>
+                    <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
+                        <span style="color: #FFD700; position: absolute; left: 0; font-size: 1.2em;">✨</span> <strong>Descarrego e Quebra de Demandas</strong> – Remoção de trabalhos negativos e feitiçaria
+                    </li>
+                    <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
+                        <span style="color: #FFD700; position: absolute; left: 0; font-size: 1.2em;">✨</span> <strong>Trabalhos para Prosperidade</strong> – Abertura de caminhos financeiros e profissionais
+                    </li>
+                    <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
+                        <span style="color: #FFD700; position: absolute; left: 0; font-size: 1.2em;">✨</span> <strong>Proteção Espiritual</strong> – Defesa contra energias negativas e olho gordo
+                    </li>
+                    <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
+                        <span style="color: #FFD700; position: absolute; left: 0; font-size: 1.2em;">✨</span> <strong>Ebori e Ori</strong> – Cuidados especiais com a cabeça (Ori) para equilíbrio espiritual
+                    </li>
+                    <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
+                        <span style="color: #FFD700; position: absolute; left: 0; font-size: 1.2em;">✨</span> <strong>Sacralização de Objetos</strong> – Consagração de anéis, colares e instrumentos de trabalho
+                    </li>
+                </ul>
+                
+                <h4 style="color: #ADD8E6; margin: 15px 0 10px; border-bottom: 1px dashed #FFD700; padding-bottom: 5px; width: 100%;">Como são realizados os trabalhos?</h4>
+                
+                <div style="background: rgba(255, 215, 0, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                    <p style="margin-bottom: 15px; line-height: 1.6; text-align: justify;">
+                        Cada trabalho é único e segue um processo sagrado:
+                    </p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 15px 0;">
+                        <div style="text-align: center; background: rgba(255, 215, 0, 0.15); padding: 10px; border-radius: 5px;">
+                            <div style="color: #FFD700; font-size: 1.8em; margin-bottom: 5px;">🔎</div>
+                            <div style="font-weight: bold;">Diagnóstico</div>
+                            <div style="font-size: 0.9em;">Análise espiritual</div>
+                        </div>
+                        <div style="text-align: center; background: rgba(255, 215, 0, 0.15); padding: 10px; border-radius: 5px;">
+                            <div style="color: #FFD700; font-size: 1.8em; margin-bottom: 5px;">🛠️</div>
+                            <div style="font-weight: bold;">Preparação</div>
+                            <div style="font-size: 0.9em;">Materiais consagrados</div>
+                        </div>
+                        <div style="text-align: center; background: rgba(255, 215, 0, 0.15); padding: 10px; border-radius: 5px;">
+                            <div style="color: #FFD700; font-size: 1.8em; margin-bottom: 5px;">🕯️</div>
+                            <div style="font-weight: bold;">Ritual</div>
+                            <div style="font-size: 0.9em;">Execução do trabalho</div>
+                        </div>
+                        <div style="text-align: center; background: rgba(255, 215, 0, 0.15); padding: 10px; border-radius: 5px;">
+                            <div style="color: #FFD700; font-size: 1.8em; margin-bottom: 5px;">🌱</div>
+                            <div style="font-weight: bold;">Manutenção</div>
+                            <div style="font-size: 0.9em;">Orientações pós-trabalho</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <blockquote style="border-left: 3px solid #FFD700; padding-left: 15px; margin: 20px 0; font-style: italic; color: #FFFACD; background: rgba(0, 0, 0, 0.3); padding: 15px; border-radius: 0 8px 8px 0;">
+                    "Nenhum trabalho espiritual substitui a força da própria fé. Os trabalhos são como sementes plantadas - precisam da água da sua crença para florescer."<br>
+                    <span style="display: block; text-align: right; font-size: 0.9em; margin-top: 5px; color: #FFD700;">— Pai Jonatas</span>
+                </blockquote>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="https://wa.me/5551991975798" style="background: linear-gradient(to bottom, #FFD700, #5e5003); color: #000; padding: 12px 25px; border-radius: 50px; font-weight: bold; text-decoration: none; display: inline-block; box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); transition: all 0.3s;">
+                        ✨ Marcar Trabalho Espiritual
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contato">
+            <a href="index.html" class="botao-voltar">← Voltar</a>
+            <p>"A sabedoria dos Orixás ilumina nosso caminho. Através da fé e do axé, encontramos o equilíbrio entre o material e o espiritual, trazendo luz às nossas vidas."</p>
+        </div>
+    </div>
+</body>
+</html>

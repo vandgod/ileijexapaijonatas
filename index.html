@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YLÊ IJEXA OXUM MIWÁ - Pai Jonatas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-image: url('Oxum 4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            text-shadow: 1px 1px 3px #000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2vh 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .conteudo {
+            background: rgba(0, 0, 0, 0.75);
+            width: 90%;
+            max-width: 1200px;
+            padding: 4vh 5%;
+            box-shadow: 0 0 25px rgba(255, 217, 0, 0.7);
+            border-radius: 15px;
+            margin: 2vh 0;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+            min-height: 90vh;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 2vh;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 2vh;
+        }
+
+        h3 {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: #ADD8E6;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .lista-horizontal {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5vh 2vw;
+            margin: 4vh 0;
+        }
+
+        .item-lista {
+            background: rgba(255, 215, 0, 0.2);
+            padding: 1.5vh 2vw;
+            border-radius: 10px;
+            color: #FFFACD;
+            box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s;
+            text-align: center;
+            flex: 0 0 auto;
+        }
+
+        .item-lista:hover {
+            transform: scale(1.05);
+            background: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+        }
+
+        .formulario {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 4vh;
+            border: 2px solid #FFD700;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 800px;
+            margin: 3vh auto;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+        }
+
+        .formulario textarea {
+            width: 100%;
+            padding: 2vh;
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 1px solid #FFD700;
+            border-radius: 10px;
+            font-size: clamp(1rem, 1.5vw, 1.3rem);
+            color: #333;
+            resize: vertical;
+            min-height: 20vh;
+            margin-bottom: 3vh;
+            line-height: 1.6;
+        }
+
+        .formulario button,
+        .contato button {
+            background: linear-gradient(to bottom, #FFD700, #5e5003);
+            color: #000;
+            padding: 3vh;
+            border: none;
+            border-radius: 10px;
+            font-size: clamp(3.1rem, 2.1vw, 1.4rem);
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+            margin-top: 2vh;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1vw;
+        }
+
+        .formulario button:hover,
+        .contato button:hover {
+            background: linear-gradient(to bottom, #e6c200, #FFD700);
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
+        }
+
+        .contato {
+            text-align: center;
+            margin-top: 4vh;
+        }
+
+        .contato p {
+            margin-top: 3vh;
+            font-style: italic;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #FFFACD;
+        }
+
+        /* Abelhas 🐝 - ATRÁS do conteúdo com movimento suave */
+        .abelha {
+            position: fixed;
+            width: clamp(30px, 4vw, 50px);
+            opacity: 0.6;
+            z-index: 1;
+            animation: voar 30s infinite linear;
+            filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
+        }
+
+        .abelha img {
+            width: 100%;
+            height: auto;
+        }
+
+        @keyframes voar {
+            0% { 
+                transform: translate(5vw, 5vh) rotate(0deg) scale(0.9);
+                opacity: 0.5;
+            }
+            25% { 
+                transform: translate(75vw, 15vh) rotate(90deg) scale(1);
+            }
+            50% { 
+                transform: translate(85vw, 55vh) rotate(180deg) scale(0.9);
+            }
+            75% { 
+                transform: translate(15vw, 65vh) rotate(270deg) scale(1);
+            }
+            100% { 
+                transform: translate(5vw, 5vh) rotate(360deg) scale(0.9);
+                opacity: 0.5;
+            }
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .conteudo {
+                width: 95%;
+                padding: 3vh 4%;
+            }
+            
+            .lista-horizontal {
+                gap: 1vh 3.5vw;
+            }
+            
+            .item-lista {
+                padding: 1vh 1.5vw;
+                font-size: 0.9rem;
+            }
+            
+            .formulario {
+                padding: 3vh;
+            }
+            
+            .formulario textarea {
+                min-height: 15vh;
+                padding: 1.5vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .conteudo {
+                width: 98%;
+                padding: 2vh 3%;
+            }
+            
+            .lista-horizontal {
+                flex-direction: column;
+                align-items: center;
+                gap: 1vh;
+            }
+            
+            .item-lista {
+                width: 100%;
+                max-width: 300px;
+                padding: 1vh;
+            }
+            
+            .formulario {
+                padding: 2vh;
+            }
+            
+            .formulario textarea {
+                min-height: 12vh;
+                font-size: 0.9rem;
+            }
+            
+            .formulario button,
+            .contato button {
+                padding: 4.5vh;
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Abelhas voando ATRÁS do conteúdo -->
+    <div class="abelha" style="top: 5%; left: 5%; animation-delay: 0s"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 25%; left: 75%; animation-delay: 5s"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 65%; left: 10%; animation-delay: 10s"><img src="abelha.png" alt="Abelha"></div>
+    <div class="abelha" style="top: 45%; left: 65%; animation-delay: 15s"><img src="abelha.png" alt="Abelha"></div>
+
+    <div class="conteudo">
+        <div>
+            <h1>YLÊ IJEXA OXUM MIWÁ</h1>
+            <h2>Pai Jonatas</h2>
+            <h3 style="text-align: center; margin-bottom: 3vh;">Consultas espirituais e orientação com base na sabedoria dos Orixás</h3>
+
+            <div class="lista-horizontal">
+                <a href="consultasespirituais.html"><h2 class="item-lista">🔮 Consultas espirituais</h2></a>
+                <a href="jogodebuzios.html"><h2 class="item-lista">🌀 Jogo de búzios</h2></a>
+                <a href="jogodecartas.html"><h2 class="item-lista">🃏 Leitura de cartas</h2></a>
+                <a href="consultacomexu.html"><h2 class="item-lista">🔥 Consultas com Exu</h2></a>
+                <a href="limpezaespiritual.html"><h2 class="item-lista">💧 Limpezas espirituais</h2></a>
+                <a href="trabalhos.html"><h2 class="item-lista">🌿 Trabalhos afins</h2></a>
+                <a href="aberturadecaminho.html"><h2 class="item-lista">🌟 Abertura de caminhos</h2></a>
+                <a href="protecaoespiritual.html"><h2 class="item-lista">✨ Proteção espiritual</h2></a>
+                <a href="banhos.html"><h2 class="item-lista">🌙 Banhos de ervas</h2></a>
+                <a href="descargas.html"><h2 class="item-lista">⚡ Descargas energéticas</h2></a>
+            </div>
+        </div>
+
+        <div>
+            <form id="formMensagem" class="formulario">
+                <textarea id="mensagem" name="mensagem" placeholder="✨ Escreva aqui sua dúvida, pedido ou intenção espiritual..." required></textarea>
+                <button type="button" onclick="enviarWhatsApp()">📩 Enviar Mensagem</button>
+            </form>
+
+            <div class="contato">
+                <a href="https://wa.me/5551991975798?text=Olá%20Pai%20Jonatas,%20gostaria%20de%20agendar%20uma%20consulta%20espiritual." target="_blank">
+                    <button>📅 Agendar Consulta</button>
+                </a>
+                <p>"A sabedoria dos Orixás ilumina nosso caminho. Através da fé e do axé, encontramos o equilíbrio entre o material e o espiritual, trazendo luz às nossas vidas."</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function enviarWhatsApp() {
+            const mensagem = document.getElementById("mensagem").value;
+            const numero = "5551991975798";
+            const texto = `Olá Pai Jonatas,%0A%0AGostaria de ajuda com:%0A%0A${encodeURIComponent(mensagem)}`;
+            window.open(`https://wa.me/${numero}?text=${texto}`, '_blank');
+        }
+    </script>
+</body>
+</html>
